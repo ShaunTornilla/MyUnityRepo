@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Prototype1Runthrough
+ * Player Controls
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

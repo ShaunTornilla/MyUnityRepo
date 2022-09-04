@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Prototype1Runthrough
+ * Camera follows player
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Prototype1Runthrough
+ * Script for incrementing the score counter when you hit a trigger zone
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

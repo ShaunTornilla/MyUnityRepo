@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Prototype1Runthrough
+ * Script for what happens when you fall
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

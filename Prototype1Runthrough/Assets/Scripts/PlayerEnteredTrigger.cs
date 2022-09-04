@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Prototype1Runthrough
+ * Unused Script when player enters a trigger. TriggerZoneAddScoreOnce overwrote this.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

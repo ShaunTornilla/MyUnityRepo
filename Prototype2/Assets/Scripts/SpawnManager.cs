@@ -10,11 +10,19 @@ public class SpawnManager : MonoBehaviour
     private float leftBound = -14;
     private float rightBound = 14;
     private float spawnPosZ = 20;
+    private float spawnIntervals;
+
+    public HealthSystem healthSystem;
 
     public bool gameOver = false;
 
     private void Start()
     {
+
+        // get a reference to HealthSystem script
+        healthSystem = GameObject.FindGameObjectWithTag("HealthSystem").GetComponent<HealthSystem>();
+
+
         // Calls the method repeatedly("method", startDelay, spawnInterval)
         // InvokeRepeating("SpawnRandomPrefab", 2, 1.5f);
 
@@ -24,11 +32,12 @@ public class SpawnManager : MonoBehaviour
     // A method with the return type IEnumerator and yield return new WaitForSeconds(); to create a coroutine
     IEnumerator SpawnRandomPrefabWithCoroutine()
     {
+
         // Adds a 3 second delay before the first prefab spawns
         yield return new WaitForSeconds(3f);
 
         // Continue to spawn while the game is not over. Make conditions true to continue to spawn forever.
-        while(!gameOver)
+        while(!healthSystem.gameOver)
         {
             SpawnRandomPrefab();
 

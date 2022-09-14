@@ -8,6 +8,13 @@ public class DestroyOutOfBounds : MonoBehaviour
     public float topBound = 20;
     public float bottomBound = -10;
 
+    private HealthSystem healthSystemScript;
+
+    private void Start()
+    {
+        healthSystemScript = GameObject.FindGameObjectWithTag("HealthSystem").GetComponent<HealthSystem>(); 
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,8 +28,10 @@ public class DestroyOutOfBounds : MonoBehaviour
         // Animals go out bounds
         if(transform.position.z < bottomBound)
         {
-            Debug.Log("Game Over!");
+            //Debug.Log("Game Over!");
 
+            // Grab HealthSystems script and call TakeDamage()
+            healthSystemScript.TakeDamage();
             Destroy(gameObject);
         }
 

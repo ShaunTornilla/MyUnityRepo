@@ -5,7 +5,7 @@ using UnityEngine;
 // Attach to Animals and Food
 public class MoveForward : MonoBehaviour
 {
-    public float speed = 1;
+    public float speed = 40;
 
     // Update is called once per frame
     void Update()

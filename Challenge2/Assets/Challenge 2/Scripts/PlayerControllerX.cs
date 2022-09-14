@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment3 Challenge 2)
+ * (Code to Handle Player Controls.)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

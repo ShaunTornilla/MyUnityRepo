@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment3 Prototype 2)
+ * (Code that Handles game's Health Bar.)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

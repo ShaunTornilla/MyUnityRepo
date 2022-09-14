@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment3 Prototype 2)
+ * (Code to Handle Collision Detection.)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

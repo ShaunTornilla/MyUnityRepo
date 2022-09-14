@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment3 Challenge 2)
+ * (Code that Handles Out of Bound Entities.)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

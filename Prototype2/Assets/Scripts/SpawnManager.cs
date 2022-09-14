@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment3 Prototype 2)
+ * (Spawn Manager Code.)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

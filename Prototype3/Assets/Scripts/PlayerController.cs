@@ -21,7 +21,12 @@ public class PlayerController : MonoBehaviour
         jumpForceMode = ForceMode.Impulse;
 
         // Modify gravity to what we want it to be
-        Physics.gravity *= gravityModifier;
+        // Physics.gravity *= gravityModifier;
+
+        if(Physics.gravity.y > -10)
+        {
+            Physics.gravity *= gravityModifier;
+        }
         
     }
 
@@ -33,6 +38,22 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, jumpForceMode);
             isOnGround = false;
+        }
+
+
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+        else if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Game Over!");
+            gameOver = true; 
         }
     }
 }

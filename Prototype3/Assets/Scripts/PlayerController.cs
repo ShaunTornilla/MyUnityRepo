@@ -12,7 +12,13 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public bool gameOver = false;
 
-    private Animator playerAnimator;
+    public Animator playerAnimator;
+    public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
+    public AudioClip crashSound;
+    public AudioClip jumpSound;
+
+    private AudioSource playerAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
         // Set reference variables to components.
         rb = GetComponent<Rigidbody>();
+
+        // Reference to playerAudio
+        playerAudio = GetComponent<AudioSource>();
 
         // Set Reference Variables to Components
         playerAnimator = GetComponent<Animator>();
@@ -48,8 +57,15 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, jumpForceMode);
             isOnGround = false;
 
+
             // Set the trigger to play the jump animation
             playerAnimator.SetTrigger("Jump_trig");
+
+            // Stop Dirt Particle
+            dirtParticle.Stop();
+
+            // Play Jump Sound
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
 
         }
 
@@ -62,6 +78,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+
+            // Play Dirt Particle
+            dirtParticle.Play();
         }
         else if(collision.gameObject.CompareTag("Obstacle"))
         {
@@ -71,6 +90,18 @@ public class PlayerController : MonoBehaviour
             // Play Death Animation
             playerAnimator.SetBool("Death_b", true);
             playerAnimator.SetInteger("DeathType_int", 1);
+
+            // Play Explosion Particle
+            explosionParticle.Play();
+
+            // Stop Dirt Particle
+            dirtParticle.Stop();
+
+            // Play Crash Sound
+            playerAudio.PlayOneShot(crashSound, 1.0f);
+
+
+
         }
     }
 }

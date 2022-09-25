@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Assignment 3
+ * Handles anything that needs to move from right to left.
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Assignment 3
+ * Player Controller
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

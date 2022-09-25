@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Assignment 3
+ * Smooths the background as player moves right
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

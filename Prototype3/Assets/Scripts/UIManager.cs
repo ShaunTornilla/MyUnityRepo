@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Assignment 3
+ * Handles UI related needs
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

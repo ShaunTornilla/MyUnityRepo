@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Challenge 3
+ * Player Controls/Actions
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

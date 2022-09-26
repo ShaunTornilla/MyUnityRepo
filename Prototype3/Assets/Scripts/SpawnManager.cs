@@ -1,10 +1,4 @@
-﻿/*
- * Shaun Tornilla
- * Assignment 3
- * Spawn Manager.
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

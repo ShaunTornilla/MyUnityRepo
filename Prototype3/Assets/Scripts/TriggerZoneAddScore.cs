@@ -1,10 +1,4 @@
-﻿/*
- * Shaun Tornilla
- * Assignment 3
- * Handles what happens when triggers are hit.
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

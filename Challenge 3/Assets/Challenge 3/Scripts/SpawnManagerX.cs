@@ -1,10 +1,4 @@
-﻿/*
- * Shaun Tornilla
- * Challenge 3
- * Handles Spawning.
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

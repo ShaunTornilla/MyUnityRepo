@@ -1,10 +1,4 @@
-﻿/*
- * Shaun Tornilla
- * Challenge 3
- * Handles what happens when any trigger is hit
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

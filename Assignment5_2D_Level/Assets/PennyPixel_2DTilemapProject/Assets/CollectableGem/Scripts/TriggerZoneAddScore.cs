@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * Shaun Tornilla
+ * Assignment 5A
+ * Add score when hitting trigger zone (UNUSED)
+ * (MODIFIED GemBehavior.cs INSTEAD)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +21,7 @@ public class TriggerZoneAddScore : MonoBehaviour
         uIManager = GameObject.FindObjectOfType<UIManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !triggered)
         {

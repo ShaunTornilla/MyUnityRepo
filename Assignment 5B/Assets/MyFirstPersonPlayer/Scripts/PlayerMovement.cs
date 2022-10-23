@@ -45,13 +45,13 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
 
         // Add Code to slow down to help with aim
-        if (Input.GetButtonDown("Walk") && isGrounded)
+        if (Input.GetButtonDown("Walk"))
         {
             speed = 4f;
         }
 
         // Add Code to slow down to help with aim
-        if (Input.GetButtonUp("Walk") && isGrounded)
+        if (Input.GetButtonUp("Walk"))
         {
             speed = 9f;
         }

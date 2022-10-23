@@ -7,6 +7,13 @@ public class HUDBehavior : MonoBehaviour
 {
     public Text targetText;
 
+    // Stats Shite
+    public float shotsHit = 0;
+    public float totalShots = 0;
+
+    public float startTime = 0;
+    public float finalTime = 0;
+
     public ShootWithRaycasts shootWithRaycastsScript;
 
     public int targetCount = 0;

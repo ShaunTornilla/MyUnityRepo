@@ -31,6 +31,8 @@ public class ShootWithRaycasts : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             Shoot();
+
+            display.totalShots++;
         }
     }
 
@@ -56,6 +58,7 @@ public class ShootWithRaycasts : MonoBehaviour
             {
                 target.TakeDamage(damage);
                 display.targetCount++;
+                display.shotsHit++;
             }
 
             if(hitInfo.rigidbody != null)

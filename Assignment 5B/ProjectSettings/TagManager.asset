@@ -8,6 +8,14 @@ TagManager:
   - PlayerCamera
   - TargetText
   - WinText
+  - Stats
+  - Clock
+  - Win
+  - Start
+  - Objectives
+  - Title
+  - Controls
+  - OnScreenText
   layers:
   - Default
   - TransparentFX

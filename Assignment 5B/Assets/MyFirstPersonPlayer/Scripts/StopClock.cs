@@ -17,12 +17,29 @@ public class StopClock : MonoBehaviour
     public StartClock startClockScript;
     public HUDBehavior hudBehaviorScript;
     public Text display;
+    public Text newRecordText;
+    public Text bestTimeText;
+
+    public bool newBestTime;
+
 
     private void Start()
     {
+        newBestTime = false;
+
         if (display == null)
         {
             display = GameObject.FindGameObjectWithTag("Clock").GetComponent<Text>();
+        }
+
+        if (newRecordText == null)
+        {
+            newRecordText = GameObject.FindGameObjectWithTag("NewRecord").GetComponent<Text>();
+        }
+
+        if (bestTimeText == null)
+        {
+            bestTimeText = GameObject.FindGameObjectWithTag("BestTime").GetComponent<Text>();
         }
 
         if (hudBehaviorScript == null)
@@ -40,10 +57,8 @@ public class StopClock : MonoBehaviour
     {
         startClockScript.startClock = false;
 
-        finalTime =  Time.time - startClockScript.time ;
-
-        display.text = "Time: " + finalTime.ToString("F3") + " seconds";
-
+        finalTime =  Time.time - startClockScript.time;
         hudBehaviorScript.finalTime = finalTime;
+
     }
 }

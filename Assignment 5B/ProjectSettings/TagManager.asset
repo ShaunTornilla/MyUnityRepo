@@ -16,6 +16,9 @@ TagManager:
   - Title
   - Controls
   - OnScreenText
+  - BestTime
+  - NewRecord
+  - End
   layers:
   - Default
   - TransparentFX

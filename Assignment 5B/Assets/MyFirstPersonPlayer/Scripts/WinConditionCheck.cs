@@ -15,6 +15,7 @@ public class WinConditionCheck : MonoBehaviour
     public HUDBehavior checks;
     public Text winText;
     public Text statsText;
+    public Text newRecordText;
 
     private float accuracy;
 
@@ -36,6 +37,11 @@ public class WinConditionCheck : MonoBehaviour
             statsText = GameObject.FindGameObjectWithTag("Stats").GetComponent<Text>();
         }
 
+        if (newRecordText == null)
+        {
+            newRecordText = GameObject.FindGameObjectWithTag("NewRecord").GetComponent<Text>();
+        }
+
     }
 
     // Update is called once per frame
@@ -47,7 +53,27 @@ public class WinConditionCheck : MonoBehaviour
         {
             won = true;
 
-            // Displays lose message
+            // CHECKS FOR NEW RECORD
+            if (PlayerPrefs.GetFloat("BestTime") == 0)
+            {
+                PlayerPrefs.SetFloat("BestTime", checks.finalTime);
+            }
+            // Checks if it's a new best time
+            if (checks.finalTime < PlayerPrefs.GetFloat("BestTime"))
+            {
+                // Stores the best time away from scene reload
+                PlayerPrefs.SetFloat("BestTime", checks.finalTime);
+                newRecordText.text = "NEW RECORD!\nTime: " + checks.finalTime.ToString("F3") + " seconds";
+
+            }
+            // Treat it like any other time
+            else
+            {
+                statsText.text = "Time: " + checks.finalTime.ToString("F3") + " seconds";
+            }
+
+
+            // Displays win message
             winText.text = "You won!\nWould you like to play again? (Y/N)";
 
             // Displays Stats
@@ -80,6 +106,7 @@ public class WinConditionCheck : MonoBehaviour
         if (won == true && Input.GetKeyDown(KeyCode.N))
         {
             Application.Quit();
+            PlayerPrefs.DeleteKey("BestTime");
         }
 
         // LOST
@@ -91,12 +118,20 @@ public class WinConditionCheck : MonoBehaviour
         if (won == false && Input.GetKeyDown(KeyCode.N))
         {
             Application.Quit();
+            PlayerPrefs.DeleteKey("BestTime");
         }
 
         // How to end the game at any time
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+            PlayerPrefs.DeleteKey("BestTime");
+        }
+
+        // How to reset the game at any time
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }

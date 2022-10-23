@@ -14,6 +14,7 @@ public class DisplayController : MonoBehaviour
     public Text titleText;
     public Text objectiveText;
     public Text controlText;
+    public Text bestTimeText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +33,20 @@ public class DisplayController : MonoBehaviour
         {
             controlText = GameObject.FindGameObjectWithTag("Controls").GetComponent<Text>();
         }
+
+        if (bestTimeText == null)
+        {
+            bestTimeText = GameObject.FindGameObjectWithTag("BestTime").GetComponent<Text>();
+        }
+
+        bestTimeText.text = "Best Time: " + PlayerPrefs.GetFloat("BestTime").ToString("F3") + " seconds";
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        titleText.text = "";
-        objectiveText.text = "";
-        controlText.text = "";
+        titleText.enabled = false ;
+        objectiveText.enabled = false;
+        controlText.enabled = false;
+        bestTimeText.enabled = false;
     }
 }

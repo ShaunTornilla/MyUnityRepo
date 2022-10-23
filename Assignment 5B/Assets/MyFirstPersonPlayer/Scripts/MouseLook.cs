@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    // SET TO 75 WHEN BUILDING IT TO a .exe, otherwise 400 for the editor
     public float mouseSensitivity = 100f;
     public GameObject player;
     private float verticalLookRotation = 0f;

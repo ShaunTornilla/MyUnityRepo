@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 12f;
+    public float speed = 8.5f;
 
     // Variables for gravity
     public Vector3 velocity;
@@ -44,8 +44,20 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
+        // Add Code to slow down to help with aim
+        if (Input.GetButtonDown("Walk") && isGrounded)
+        {
+            speed = 4f;
+        }
+
+        // Add Code to slow down to help with aim
+        if (Input.GetButtonUp("Walk") && isGrounded)
+        {
+            speed = 9f;
+        }
+
         // Add Jump Code before gravity velocity
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

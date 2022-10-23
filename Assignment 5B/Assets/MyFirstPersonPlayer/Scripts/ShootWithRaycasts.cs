@@ -9,8 +9,16 @@ public class ShootWithRaycasts : MonoBehaviour
     public Camera cam;
 
     public ParticleSystem muzzleFlash;
-
     public float hitForce = 10f;
+
+    // Audio
+    private AudioSource gunAudio;
+    public AudioClip gunSound;
+
+    private void Awake()
+    {
+        gunAudio = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +31,7 @@ public class ShootWithRaycasts : MonoBehaviour
 
     void Shoot()
     {
+        gunAudio.PlayOneShot(gunSound, .5f);
         muzzleFlash.Play();
 
         RaycastHit hitInfo;

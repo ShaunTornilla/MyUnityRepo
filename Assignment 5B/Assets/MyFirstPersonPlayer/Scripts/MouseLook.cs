@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment5B - 3D Level)
+ * (Mouse Functionality)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

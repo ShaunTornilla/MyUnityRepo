@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment5B - 3D Level)
+ * (Code that keeps track of time)
+ * also if there was a better way to do this part please lmk lol
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

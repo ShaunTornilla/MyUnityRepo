@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿/*
+ * (Shaun Tornilla)
+ * (Assignment5B - 3D Level)
+ * (Makes targets in game functional)
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

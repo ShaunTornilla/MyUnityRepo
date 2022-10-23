@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ShootWithRaycasts : MonoBehaviour
 {
+    // UI Shite
+    private HUDBehavior display;
+
+
     public float damage = 10f;
     public float range = 100f;
     public Camera cam;
@@ -18,6 +22,7 @@ public class ShootWithRaycasts : MonoBehaviour
     private void Awake()
     {
         gunAudio = GetComponent<AudioSource>();
+        display = GameObject.FindObjectOfType<HUDBehavior>();
     }
 
     // Update is called once per frame
@@ -50,6 +55,7 @@ public class ShootWithRaycasts : MonoBehaviour
             if(target != null)
             {
                 target.TakeDamage(damage);
+                display.targetCount++;
             }
 
             if(hitInfo.rigidbody != null)

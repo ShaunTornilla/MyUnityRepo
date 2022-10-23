@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MyFirstPersonPlayer/Scenes/Assignment 5B Level.unity
+    guid: b721b7833524641499e60a926315a266
   m_configObjects: {}

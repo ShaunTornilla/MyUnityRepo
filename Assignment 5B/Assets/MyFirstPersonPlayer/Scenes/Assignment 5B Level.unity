@@ -90254,6 +90254,7 @@ MonoBehaviour:
   checks: {fileID: 0}
   winText: {fileID: 0}
   statsText: {fileID: 0}
+  newRecordText: {fileID: 0}
   won: 0
 --- !u!65 &2120715737
 BoxCollider:

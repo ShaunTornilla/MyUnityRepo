@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BestTime
+  - Controls
+  - Stats
+  - WinText
+  - Start
+  - HUD
+  - NewRecord
+  - Objectives
+  - End
+  - TargetText
+  - Clock
+  - PlayerCamera
+  - Title
+  - Win
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -13,7 +28,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - Ground
   - 
   - 
   - 

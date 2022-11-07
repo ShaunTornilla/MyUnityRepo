@@ -38,6 +38,9 @@ public class DisplayManager : MonoBehaviour
     public bool done = false;
     public bool won = false;
     public bool paused = false;
+    public bool UI = false;
+    public bool start = false;
+    public bool triggered = false;
     //public bool startClock = false;
     public ShootWithRaycasts shootWithRaycastsScript;
 
@@ -116,6 +119,8 @@ public class DisplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         
+
         targetText.text = "Targets: " + targetCount + "/45";
 
         /*
@@ -130,26 +135,37 @@ public class DisplayManager : MonoBehaviour
         }
 
         // Pause
+        /*
         if (GameManager.Instance.startClock)
         {
             disableIntroUI();
         }
-
+        */
         if (Input.GetKeyDown(KeyCode.P))
         {
-            disableLevelUI();
+            UI = false;
+            levelUI(UI, start);
         }
+
+        // Pause; Disable all UI for both in game and out of game
+        if(GameManager.Instance.pause == false && triggered == false)
+        {
+            UI = false;
+            start = true;
+            levelUI(UI, start);
+            triggered = true;
+        }
+
 
         // Unpause
-        /*
-        if (GameManager.Instance.pause == false)
+        if (GameManager.Instance.pause == false && triggered == true)
         {
-
-            enableLevelUI();
+            UI = true;
+            levelUI(UI, start);
             Cursor.lockState = CursorLockMode.Locked;
 
+            triggered = true;
         }
-        */
 
     }
 
@@ -229,42 +245,58 @@ public class DisplayManager : MonoBehaviour
         }
     }
 
-    void disableLevelUI()
+    void levelUI(bool enabled, bool start)
     {
-        targetText.enabled = false;
-        titleText.enabled = false;
-        objectiveText.enabled = false;
-        controlText.enabled = false;
-        bestTimeText.enabled = false;
-        newRecordText.enabled = false;
-        statsText.enabled = false;
-        winText.enabled = false;
-        clockText.enabled = false;
-        reticleImage.enabled = false;
-        //coinText.enabled = false;
-    }
+        /*
+        // If unpaused and game started
+        if (enabled == false && start == true)
+        {
 
-    void enableLevelUI()
-    {
-        targetText.enabled = true;
-        titleText.enabled = true;
-        objectiveText.enabled = true;
-        controlText.enabled = true;
-        bestTimeText.enabled = true;
-        newRecordText.enabled = true;
-        statsText.enabled = true;
-        winText.enabled = true;
-        clockText.enabled = true;
-        reticleImage.enabled = true;
-        //coinText.enabled = false;
+        }
+        */
+        // If Unpaused
+        if (enabled == true && start == true || start == false)
+        {
+            targetText.enabled = true;
+            titleText.enabled = true;
+            objectiveText.enabled = true;
+            controlText.enabled = true;
+            bestTimeText.enabled = true;
+            newRecordText.enabled = true;
+            statsText.enabled = true;
+            winText.enabled = true;
+            clockText.enabled = true;
+            reticleImage.enabled = true;
+            //coinText.enabled = false;
+        }
+        // If paused
+        if (enabled == false && start == true || start == false)
+        {
+            targetText.enabled = false;
+            titleText.enabled = false;
+            objectiveText.enabled = false;
+            controlText.enabled = false;
+            bestTimeText.enabled = false;
+            newRecordText.enabled = false;
+            statsText.enabled = false;
+            winText.enabled = false;
+            clockText.enabled = false;
+            reticleImage.enabled = false;
+            //coinText.enabled = false;
+        }
+        if(enabled == false && start == true)
+        {
+            titleText.enabled = false;
+            controlText.enabled = false;
+            objectiveText.enabled = false;
+            bestTimeText.enabled = false;
+        }
+
     }
 
     void disableIntroUI()
     {
-        titleText.enabled = false;
-        controlText.enabled = false;
-        objectiveText.enabled = false;
-        bestTimeText.enabled = false;
+
     }
 }
 

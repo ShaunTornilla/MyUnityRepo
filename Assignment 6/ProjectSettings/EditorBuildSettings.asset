@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: df22f1c4ef6130649a0f639fd6fe176c
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 58b035ce9af54054d94cc0210da1714e
+    path: Assets/Scenes/Run-And-Gun.unity
+    guid: 9e139d0c54bdb4f4a96967c001a90a17
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
-    guid: 5d45a12452272e147ab37dcbdb0e85ab
+    path: Assets/Scenes/Coin Collection.unity
+    guid: 674bb9fed26f0924fb16af14e3e80b8c
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/WorkInProgress.unity
     guid: 222f0042df4ad6d42b3a76709e2e8376
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -7,18 +7,21 @@ TagManager:
   - BestTime
   - Controls
   - Stats
-  - WinText
   - Start
   - HUD
   - NewRecord
   - Objectives
   - End
   - TargetText
-  - Clock
   - PlayerCamera
   - Title
   - Win
   - Fire
+  - DisplayManager
+  - Reticle
+  - WinText
+  - Clock
+  - CoinText
   layers:
   - Default
   - TransparentFX
@@ -29,7 +32,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Menu UI
   - 
   - 
   - 

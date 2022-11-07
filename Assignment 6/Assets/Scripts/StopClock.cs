@@ -55,7 +55,7 @@ public class StopClock : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        displayManagerScript.startClock = false;
+        GameManager.Instance.startClock = false;
 
         finalTime =  Time.time - startClockScript.time;
         displayManagerScript.finalTime = finalTime;

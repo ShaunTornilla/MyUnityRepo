@@ -9,7 +9,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject mainMenu;
 
     public bool pause = false;
-
+    public bool startClock = false;
 
     // Variable to keep track of current level
     public string CurrentLevelName = string.Empty;
@@ -38,6 +38,7 @@ public class GameManager : Singleton<GameManager>
     // Methods to load and unload scenes
     public void LoadLevel(string levelName)
     {
+        Time.timeScale = 1f;
 
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
@@ -91,7 +92,7 @@ public class GameManager : Singleton<GameManager>
     {
         pause = false;
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 1f;
+        Time.timeScale= 1f;
         pauseMenu.SetActive(false);
     }
 
@@ -99,9 +100,11 @@ public class GameManager : Singleton<GameManager>
     public void Menu()
     {
         Cursor.lockState = CursorLockMode.None;
+        startClock = false;
         Time.timeScale = 0f;
         pauseMenu.SetActive(false);
         mainMenu.SetActive(true);
+        
     }
 
     private void Update()
@@ -111,4 +114,5 @@ public class GameManager : Singleton<GameManager>
             Pause();
         }
     }
+
 }

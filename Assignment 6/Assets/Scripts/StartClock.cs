@@ -38,14 +38,14 @@ public class StartClock : MonoBehaviour
     {
         time = Time.time;
         displayManagerScript.startTime = Time.time;
-        displayManagerScript.startClock = true;
+        GameManager.Instance.startClock = true;
     }
 
     private void Update()
     {
         displayManagerScript.startTime = Time.time - time;
 
-        if (displayManagerScript.startClock)
+        if (GameManager.Instance.startClock)
         {
             display.text = "Time: " + displayManagerScript.startTime.ToString("F3") + " second(s)";
         }

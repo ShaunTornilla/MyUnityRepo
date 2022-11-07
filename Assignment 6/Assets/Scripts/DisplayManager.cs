@@ -38,7 +38,7 @@ public class DisplayManager : MonoBehaviour
     public bool done = false;
     public bool won = false;
     public bool paused = false;
-    public bool startClock = false;
+    //public bool startClock = false;
     public ShootWithRaycasts shootWithRaycastsScript;
 
     // Start is called before the first frame update
@@ -129,23 +129,27 @@ public class DisplayManager : MonoBehaviour
             newRecordCheck();
         }
 
-        if(startClock)
+        // Pause
+        if (GameManager.Instance.startClock)
         {
-            gameInProgressUI();
+            disableIntroUI();
         }
 
-        // Pause
-        if (GameManager.Instance.pause == true)
+        if (Input.GetKeyDown(KeyCode.P))
         {
             disableLevelUI();
         }
 
-        // Pause
+        // Unpause
+        /*
         if (GameManager.Instance.pause == false)
         {
+
             enableLevelUI();
             Cursor.lockState = CursorLockMode.Locked;
+
         }
+        */
 
     }
 
@@ -255,7 +259,7 @@ public class DisplayManager : MonoBehaviour
         //coinText.enabled = false;
     }
 
-    void gameInProgressUI()
+    void disableIntroUI()
     {
         titleText.enabled = false;
         controlText.enabled = false;

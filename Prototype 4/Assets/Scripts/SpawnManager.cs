@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         // Where to set the wave goal
-        goal = 1;
+        goal = 10;
 
         SpawnEnemyWave(waveNumber);
         SpawnPowerUp(1);

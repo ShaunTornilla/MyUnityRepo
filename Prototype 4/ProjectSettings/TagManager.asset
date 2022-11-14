@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - SpawnManager
   - PowerUp
+  - UIManager
+  - WaveText
+  - WinText
+  - Conditions
   layers:
   - Default
   - TransparentFX

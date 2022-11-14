@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     private float forwardInput;
     private GameObject focalPoint;
     public bool hasPowerUp;
+    public bool playerFell = false;
     private float powerUpStrength = 15.0f;
+
 
     public GameObject powerUpIndicator;
 
@@ -33,6 +35,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         playerRB.AddForce(focalPoint.transform.forward * speed * forwardInput);
+
+        // Lose if player falls
+        if (transform.position.y < -10)
+        {
+            playerFell = true; 
+        }
     }
 
     private void OnTriggerEnter(Collider other)
